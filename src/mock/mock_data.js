@@ -21,6 +21,13 @@ export const mockData = {
           "icon": "/sitelogo/linux.do.ico"
         },
         {
+          "id": "0011",
+          "name": "PVE",
+          "url": "https://pve.aiket.top:9043",
+          "description": "PVE主机",
+          "icon": "/sitelogo/linux.do.ico"
+        },
+        {
           "id": "0003",
           "name": "1plane",
           "url": "http://1p.aiket.dpdns.org:9090",
