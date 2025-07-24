@@ -7,40 +7,76 @@ export const mockData = {
       "order": 0,
       "sites": [
         {
-          "id": "site-1752857783656",
-          "name": "OpenAI",
-          "url": "https://chatgpt.com",
-          "description": "OpenAI,好用👌",
+          "id": "0001",
+          "name": "个人网盘",
+          "url": "http://alist.aiket.dpdns.org:9090",
+          "description": "openlist网盘👌",
           "icon": "/sitelogo/chatgpt.com.ico"
         },
         {
-          "id": "linux-do",
-          "name": "Linux.do",
-          "url": "https://linux.do",
-          "description": "Linux技术社区，Peace and Love",
+          "id": "0002",
+          "name": "NAS相册",
+          "url": "http://img.aiket.dpdns.org:9090",
+          "description": "NASCAB",
           "icon": "/sitelogo/linux.do.ico"
         },
         {
-          "id": "site-1752649007053",
-          "name": "BeJson",
-          "url": "https://www.bejson.com/",
-          "description": "工具大全",
+          "id": "0003",
+          "name": "1plane",
+          "url": "http://1p.aiket.dpdns.org:9090",
+          "description": "1plane",
           "icon": "/sitelogo/www.bejson.com.ico"
         },
         {
-          "id": "github",
-          "name": "GitHub",
-          "url": "https://github.com",
-          "description": "代码托管平台",
+          "id": "0004",
+          "name": "lucky",
+          "url": "http://lucky.aiket.dpdns.org:9090",
+          "description": "反代",
           "icon": "/sitelogo/github.com.ico"
         },
         {
-          "id": "curlconverter",
-          "name": "curl converter",
-          "url": "https://curlconverter.com/",
-          "description": "curl命令转换工具",
+          "id": "0005",
+          "name": "nps",
+          "url": "http://nps.aiket.dpdns.org:9090",
+          "description": "内网穿透",
+          "icon": "/sitelogo/curlconverter.com.ico"
+        },
+        {
+          "id": "0006",
+          "name": "迅雷",
+          "url": "http://xunlei.aiket.dpdns.org:9090",
+          "description": "服务器迅雷",
+          "icon": "/sitelogo/curlconverter.com.ico"
+        },
+        {
+          "id": "0007",
+          "name": "公司路由器",
+          "url": "http://op.aiket.dpdns.org:9090",
+          "description": "openwrt",
+          "icon": "/sitelogo/curlconverter.com.ico"
+        },
+        {
+          "id": "0008",
+          "name": "电影",
+          "url": "http://dy.aiket.dpdns.org:9090",
+          "description": "libretv",
+          "icon": "/sitelogo/curlconverter.com.ico"
+        },
+        {
+          "id": "0009",
+          "name": "看电影",
+          "url": "http://kdy.aiket.dpdns.org:9090",
+          "description": "moon_tv",
+          "icon": "/sitelogo/curlconverter.com.ico"
+        },
+        {
+          "id": "0010",
+          "name": "mcu",
+          "url": "http://mcu.aiket.dpdns.org:9090",
+          "description": "HC89F1602A",
           "icon": "/sitelogo/curlconverter.com.ico"
         }
+        
       ]
     },
     {
