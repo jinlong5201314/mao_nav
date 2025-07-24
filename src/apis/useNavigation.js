@@ -12,49 +12,29 @@ export function useNavigation() {
     error.value = null
 
     try {
-      const response = await fetch('/bookmarks.json', { cache: 'no-store' })
-      if (response.ok) {
-        const jsonData = await response.json()
-        // 1. 处理你的自定义格式
-        if (jsonData["收藏夹栏"] && Array.isArray(jsonData["收藏夹栏"])) {
-          categories.value = jsonData["收藏夹栏"].map((group, idx) => {
-            const groupName = Object.keys(group)[0]
-            return {
-              id: groupName + idx,
-              name: groupName,
-              icon: "📁",
-              order: idx,
-              sites: group[groupName].map((item, siteIdx) => ({
-                id: groupName + "-" + siteIdx,
-                name: item.name,
-                url: item.href,
-                description: "",
-                icon: item.icon
-              }))
-            }
-          })
-          title.value = '我的收藏夹'
-        // 2. 兼容原格式
-        } else if (Array.isArray(jsonData)) {
-          categories.value = jsonData
-          title.value = '我的收藏夹'
-        } else if (jsonData.categories) {
-          categories.value = jsonData.categories
-          title.value = jsonData.title || '猫猫导航'
-        }
-        document.title = title.value
-        loading.value = false
-        return
+      // 开发环境模拟网络延迟
+      if (import.meta.env.DEV) {
+        await new Promise(resolve => setTimeout(resolve, 500))
       }
-    } catch (e) {
-      // 忽略错误
-    }
 
-    // 回退到 mockData
-    categories.value = mockData.categories
-    title.value = mockData.title
-    document.title = title.value
-    loading.value = false
+      // 默认使用本地mock数据
+      categories.value = mockData.categories
+      title.value = mockData.title
+
+      // 动态设置页面标题
+      document.title = title.value
+
+
+    } catch (err) {
+      error.value = err.message
+      console.error('Error fetching categories:', err)
+      // 兜底：始终返回 mock 数据
+      categories.value = mockData.categories
+      title.value = mockData.title
+      document.title = title.value
+    } finally {
+      loading.value = false
+    }
   }
 
   return {
