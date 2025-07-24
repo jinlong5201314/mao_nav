@@ -7,7 +7,6 @@ export function useNavigation() {
   const loading = ref(false)
   const error = ref(null)
 
-  // 新增：尝试从 public/bookmarks.json 读取数据
   const fetchCategories = async () => {
     loading.value = true
     error.value = null
@@ -17,17 +16,30 @@ export function useNavigation() {
       const response = await fetch('/bookmarks.json', { cache: 'no-store' })
       if (response.ok) {
         const jsonData = await response.json()
-        // 兼容你的 json 格式和 mockData 格式
-        if (Array.isArray(jsonData)) {
-          categories.value = jsonData
+        // 检查是否为你的格式
+        if (jsonData["收藏夹栏"] && Array.isArray(jsonData["收藏夹栏"])) {
+          // 转换为 [{ id, name, sites: [...] }, ...]
+          categories.value = jsonData["收藏夹栏"].map((group, idx) => {
+            const groupName = Object.keys(group)[0]
+            return {
+              id: groupName + idx,
+              name: groupName,
+              icon: "📂", // 可自定义
+              order: idx,
+              sites: group[groupName].map((item, siteIdx) => ({
+                id: groupName + "-" + siteIdx,
+                name: item.name,
+                url: item.href,
+                description: "",
+                icon: item.icon
+              }))
+            }
+          })
           title.value = '我的收藏夹'
-        } else if (jsonData.categories) {
-          categories.value = jsonData.categories
-          title.value = jsonData.title || '猫猫导航'
+          document.title = title.value
+          loading.value = false
+          return
         }
-        document.title = title.value
-        loading.value = false
-        return
       }
     } catch (e) {
       // 忽略，继续用 mockData
