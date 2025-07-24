@@ -15,7 +15,7 @@ export function useNavigation() {
       const response = await fetch('/bookmarks.json', { cache: 'no-store' })
       if (response.ok) {
         const jsonData = await response.json()
-        // 1. 你的自定义格式
+        // 1. 处理你的自定义格式
         if (jsonData["收藏夹栏"] && Array.isArray(jsonData["收藏夹栏"])) {
           categories.value = jsonData["收藏夹栏"].map((group, idx) => {
             const groupName = Object.keys(group)[0]
