@@ -12,19 +12,17 @@ export function useNavigation() {
     error.value = null
 
     try {
-      // 优先尝试加载 public/bookmarks.json
       const response = await fetch('/bookmarks.json', { cache: 'no-store' })
       if (response.ok) {
         const jsonData = await response.json()
-        // 检查是否为你的格式
+        // 1. 你的自定义格式
         if (jsonData["收藏夹栏"] && Array.isArray(jsonData["收藏夹栏"])) {
-          // 转换为 [{ id, name, sites: [...] }, ...]
           categories.value = jsonData["收藏夹栏"].map((group, idx) => {
             const groupName = Object.keys(group)[0]
             return {
               id: groupName + idx,
               name: groupName,
-              icon: "📂", // 可自定义
+              icon: "📁",
               order: idx,
               sites: group[groupName].map((item, siteIdx) => ({
                 id: groupName + "-" + siteIdx,
@@ -36,16 +34,23 @@ export function useNavigation() {
             }
           })
           title.value = '我的收藏夹'
-          document.title = title.value
-          loading.value = false
-          return
+        // 2. 兼容原格式
+        } else if (Array.isArray(jsonData)) {
+          categories.value = jsonData
+          title.value = '我的收藏夹'
+        } else if (jsonData.categories) {
+          categories.value = jsonData.categories
+          title.value = jsonData.title || '猫猫导航'
         }
+        document.title = title.value
+        loading.value = false
+        return
       }
     } catch (e) {
-      // 忽略，继续用 mockData
+      // 忽略错误
     }
 
-    // 默认使用本地mock数据
+    // 回退到 mockData
     categories.value = mockData.categories
     title.value = mockData.title
     document.title = title.value
