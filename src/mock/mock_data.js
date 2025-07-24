@@ -11,7 +11,7 @@ export const mockData = {
           "name": "个人网盘",
           "url": "http://alist.aiket.dpdns.org:9090",
           "description": "openlist网盘👌",
-          "icon": "/sitelogo/chatgpt.com.ico"
+          "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACy0lEQVQ4jW2Tz2tcVRTHP/e9+6Yzk85MEhtl2qamnWD8wViJJVB/l7oxLrpUmsasxI3oHyAu3LoSEURRXFhUij/wB4II4iYLkcYibRRJadLpYtradKZJZt68e+85Ll5aVHrhLO6B7/d8zjn3mpkfXt5fikvvl4rF6QfHGtGe2hiVUoWdxTIFm2CMIfOOXtrnRn+Tlc4lVtYvaa/fWxqk+pL1Tk5KJI+8cd8cM6NT3PYk21EBHVM+af3Mu399e9SpO2lFwswz9UPMjE5xrrPGau8yhaRAElviKAJAVHDBkzlHszrB3L4jfN/6hT/StUM2qJjGUB2Aj1o/MVH7jN+6szwx+iNL6XNEJhf3Bymb6Raz7mEWho5yd/lOzl67YKyIoKoApJmnFLU5XPmOql7kaqeDjQNeApnL6A9SXNXlVCKICP8xGLiMdneE/cMtzt/Yy/pGl8QGggjeOwbO4YIHIKgQVLCigpIbqKR8eaGJjR8ijmOSuEN/YBAVggR8CIQQ/kegeovAS8BLhhARiSHzJjdWcCFHDxJysQqqglW9WR+CCC44jEREGDAGVeXYvsPMN57mz26LX9vLOOcQUVTB3ioBqApBBIMiJk8fbxxhlynTqOxmqjrO+WurfHDuG1Ty1u2/34uoIiIYDBgo2x28dvAEacj48PevKMYJL9w7S7u3zqnFtwGIbgpVFbPdi5LfM59PfcgWKdoCz04+yVhphOYdDd557FXQbYIzf6/w/MRTvN6cY7m7hoqiktO8tfQp9dIws43H2VUczgcYhHvKeziws44F9OuLi0xXD3Bs/FF2j44QvMcHj/eBZrKXL64uMlyokGUZzjlcltHeXGd16zJm8tT8aWBaRKhFJWrJECjk21FQSHHcXxvnzYMvkg0GXNm8zivL73ElbJwxk58vPIDIx0ATMLf/jqDAXVGFyWKd01srmhk9a20y/w/gHp5Y7zpLPgAAAABJRU5ErkJggg=="
         },
         {
           "id": "0002",
